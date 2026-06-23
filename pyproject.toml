@@ -1,0 +1,61 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lob-tcn"
+version = "0.1.0"
+description = "Limit Order Book modeling with Temporal Convolutional Networks"
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.2.0",
+    "numpy>=1.26.0",
+    "pandas>=2.1.0",
+    "scikit-learn>=1.4.0",
+    "requests>=2.31.0",
+    "pyarrow>=14.0.0",
+    "h5py>=3.10.0",
+    "fastapi>=0.110.0",
+    "uvicorn[standard]>=0.27.0",
+    "pydantic>=2.6.0",
+    "wandb>=0.16.0",
+    "mlflow>=2.10.0",
+    "streamlit>=1.31.0",
+    "plotly>=5.18.0",
+    "pyyaml>=6.0.1",
+    "python-dotenv>=1.0.0",
+    "loguru>=0.7.2",
+    "tqdm>=4.66.0",
+    "click>=8.1.7",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+    "pytest-cov>=4.1.0",
+    "black>=24.0.0",
+    "ruff>=0.2.0",
+    "mypy>=1.8.0",
+    "httpx>=0.26.0",
+]
+backtest_extras = [
+    "vectorbt>=0.26.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v --tb=short"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.black]
+line-length = 100
+target-version = ["py310"]

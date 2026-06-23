@@ -1,0 +1,20 @@
+model_name: tcn
+model:
+  n_levels: 4
+  n_channels: 64
+  kernel_size: 3
+  dropout: 0.2
+training:
+  batch_size: 256
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  n_epochs: 20
+  seq_len: 100
+  patience: 5
+  scheduler: cosine
+  class_weighted: true
+data:
+  horizons: [10, 50, 100]
+  train_split: 0.70
+  val_split: 0.15
+  test_split: 0.15

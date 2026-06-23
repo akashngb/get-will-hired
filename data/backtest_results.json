@@ -1,0 +1,31 @@
+{
+  "horizon": 10,
+  "confidence_threshold": 0.45,
+  "cost_bps": 0.5,
+  "n_windows": 14907,
+  "prediction_distribution": {
+    "0": 2748,
+    "1": 3351,
+    "2": 8808
+  },
+  "signal_distribution": {
+    "0": 14180,
+    "1": 727
+  },
+  "report": {
+    "sharpe": 192.08605128282534,
+    "sortino": 284.958144021217,
+    "max_drawdown": 0.08808520057417528,
+    "calmar": Infinity,
+    "hit_rate": 0.43373493975903615,
+    "profit_factor": 1.2680774826979038,
+    "alpha": 1826.0459200416499,
+    "beta": 0.008817808663637914,
+    "total_return": 0.311005547797408,
+    "n_trades": 1.0,
+    "gross_profits": 1.4711385983896448,
+    "gross_losses": -1.1601330505922378,
+    "final_capital": 1354210.4481975622,
+    "initial_capital": 1000000.0
+  }
+}

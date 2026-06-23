@@ -1,0 +1,182 @@
+[
+  {
+    "name": "baseline",
+    "description": "TCN n=3 c=32 k=3",
+    "params": 27113,
+    "train_time_s": 13.570028066635132,
+    "test_accuracy": {
+      "horizon_10": 0.4704531640440332,
+      "horizon_50": 0.45262375903288987,
+      "horizon_100": 0.419193624636996
+    },
+    "config": {
+      "name": "baseline",
+      "description": "TCN n=3 c=32 k=3",
+      "n_levels": 3,
+      "n_channels": 32,
+      "kernel_size": 3,
+      "dropout": 0.1,
+      "seq_len": 64,
+      "use_lstm": false,
+      "feature_mask": null,
+      "uniform_dilation": false
+    },
+    "n_features": 33
+  },
+  {
+    "name": "lstm",
+    "description": "LSTM hidden=32 (LSTM vs TCN)",
+    "params": 15497,
+    "train_time_s": 2.539030075073242,
+    "test_accuracy": {
+      "horizon_10": 0.45897210778685754,
+      "horizon_50": 0.4474910515296819,
+      "horizon_100": 0.4354697102721686
+    },
+    "config": {
+      "name": "lstm",
+      "description": "LSTM hidden=32 (LSTM vs TCN)",
+      "n_levels": 3,
+      "n_channels": 32,
+      "kernel_size": 3,
+      "dropout": 0.1,
+      "seq_len": 64,
+      "use_lstm": true,
+      "feature_mask": null,
+      "uniform_dilation": false
+    },
+    "n_features": 33
+  },
+  {
+    "name": "uniform_dilation",
+    "description": "TCN with dilation [1,1,1] (no dilation skip)",
+    "params": 27113,
+    "train_time_s": 10.59492826461792,
+    "test_accuracy": {
+      "horizon_10": 0.4509353684068346,
+      "horizon_50": 0.4474910515296819,
+      "horizon_100": 0.4173026271358141
+    },
+    "config": {
+      "name": "uniform_dilation",
+      "description": "TCN with dilation [1,1,1] (no dilation skip)",
+      "n_levels": 3,
+      "n_channels": 32,
+      "kernel_size": 3,
+      "dropout": 0.1,
+      "seq_len": 64,
+      "use_lstm": false,
+      "feature_mask": null,
+      "uniform_dilation": true
+    },
+    "n_features": 33
+  },
+  {
+    "name": "n_levels_2",
+    "description": "TCN n_levels=2",
+    "params": 20777,
+    "train_time_s": 9.061349153518677,
+    "test_accuracy": {
+      "horizon_10": 0.4516107246572567,
+      "horizon_50": 0.4538394002836496,
+      "horizon_100": 0.4171000202606875
+    },
+    "config": {
+      "name": "n_levels_2",
+      "description": "TCN n_levels=2",
+      "n_levels": 2,
+      "n_channels": 32,
+      "kernel_size": 3,
+      "dropout": 0.1,
+      "seq_len": 64,
+      "use_lstm": false,
+      "feature_mask": null,
+      "uniform_dilation": false
+    },
+    "n_features": 33
+  },
+  {
+    "name": "n_levels_5",
+    "description": "TCN n_levels=5",
+    "params": 39785,
+    "train_time_s": 22.643585920333862,
+    "test_accuracy": {
+      "horizon_10": 0.47180387654487743,
+      "horizon_50": 0.44992233403120147,
+      "horizon_100": 0.42088201526305125
+    },
+    "config": {
+      "name": "n_levels_5",
+      "description": "TCN n_levels=5",
+      "n_levels": 5,
+      "n_channels": 32,
+      "kernel_size": 3,
+      "dropout": 0.1,
+      "seq_len": 64,
+      "use_lstm": false,
+      "feature_mask": null,
+      "uniform_dilation": false
+    },
+    "n_features": 33
+  },
+  {
+    "name": "no_imbalance",
+    "description": "Drop imbalance features",
+    "params": 25961,
+    "train_time_s": 13.219866037368774,
+    "test_accuracy": {
+      "horizon_10": 0.4503950834064969,
+      "horizon_50": 0.4483014790301884,
+      "horizon_100": 0.4149388802593368
+    },
+    "config": {
+      "name": "no_imbalance",
+      "description": "Drop imbalance features",
+      "n_levels": 3,
+      "n_channels": 32,
+      "kernel_size": 3,
+      "dropout": 0.1,
+      "seq_len": 64,
+      "use_lstm": false,
+      "feature_mask": null,
+      "uniform_dilation": false
+    },
+    "n_features": 24
+  },
+  {
+    "name": "no_flow",
+    "description": "Drop flow features",
+    "params": 26345,
+    "train_time_s": 13.650256872177124,
+    "test_accuracy": {
+      "horizon_10": 0.4578915377861822,
+      "horizon_50": 0.44573512527858444,
+      "horizon_100": 0.4176403052610252
+    },
+    "config": {
+      "name": "no_flow",
+      "description": "Drop flow features",
+      "n_levels": 3,
+      "n_channels": 32,
+      "kernel_size": 3,
+      "dropout": 0.1,
+      "seq_len": 64,
+      "use_lstm": false,
+      "feature_mask": null,
+      "uniform_dilation": false
+    },
+    "n_features": 27
+  },
+  {
+    "name": "majority_class",
+    "description": "Always predict the majority class",
+    "params": 0,
+    "train_time_s": 0.0,
+    "test_accuracy": {
+      "horizon_10": 0.49138276553106214,
+      "horizon_50": 0.5308617234468938,
+      "horizon_100": 0.5687374749498998
+    },
+    "n_features": 0
+  }
+]
